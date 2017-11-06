@@ -1,23 +1,24 @@
 #include <stdio.h>
 #include <math.h>
+#include <stdlib.h>
 #include <my.h>
 
-#define C 0.5
-#define S 0.03 
+#define C 0.5 
 #define TIME 60
 #define N 7
 
-void matrix(double[N][N]);
-void InitVec(double[N]);
-void cp(double[N], double[N]);
+void matrix(double[N][N], double);
+void InitVec(double*);
+void cp(double*, double*);
 
 void main(int argc, char *argv[]) {
 	double a[N][N] = {0};
 	double b[N] = {1,0,0,0,0,0,0};
 	double out[N] = {0};
 	double temp[N] = {0};
+	double s = atof(argv[1]);
 
-	matrix(a);
+	matrix(a, s);
 
 		printf("0,");
 		for (int h = 0; h < N; ++h) {
@@ -39,32 +40,32 @@ void main(int argc, char *argv[]) {
 		}
 }
 
-void matrix(double out[N][N]) {
+void matrix(double out[N][N], double s) {
 	for (int i = 0; i < N; ++i) {
 		for (int j = 0; j < N; ++j) {
 			if ((j == 0 && i == 0) || (j == 6 && i == 6)) {
-				out[i][j] += (1-S)*(1-C);
+				out[i][j] += (1-s)*(1-C);
 			}
 			if (i == j) {
-				out[i][j] += S;
+				out[i][j] += s;
 			}
 			else if (j == i+1) {
-				out[i][j] += (1-S)*(1-C);
+				out[i][j] += (1-s)*(1-C);
 			}
 			else if (i == j+1) {
-				out[i][j] += (1-S)*C;
+				out[i][j] += (1-s)*C;
 			}
 		}
 	}
 }
 
-void InitVec(double out[N]) {
+void InitVec(double *out) {
 	for (int i = 0; i < N; ++i) {
 		out[i] = 0;
 	}
 }
 
-void cp(double in[N], double out[N]) {
+void cp(double *in, double *out) {
 	for (int i = 0; i < N; ++i) {
 		out[i] = in[i];
 	}
