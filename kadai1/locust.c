@@ -8,8 +8,6 @@
 #define N 7
 
 void matrix(double[N][N], double);
-void InitVec(double*);
-void cp(double*, double*);
 
 void main(int argc, char *argv[]) {
 	double a[N][N] = {0};
@@ -28,8 +26,8 @@ void main(int argc, char *argv[]) {
 		printf("\n");
 		mat_vec(N, a, b, out);
 		for (int i = 0; i < TIME; ++i) {
-			cp(out, temp);
-			InitVec(out);
+			cp(N, out, temp);
+			InitVec(N, out);
 			mat_vec(N, a, temp, out);
 			printf("%d,", i+1);
 			for (int j = 0; j < N; ++j) {
@@ -58,16 +56,3 @@ void matrix(double out[N][N], double s) {
 		}
 	}
 }
-
-void InitVec(double *out) {
-	for (int i = 0; i < N; ++i) {
-		out[i] = 0;
-	}
-}
-
-void cp(double *in, double *out) {
-	for (int i = 0; i < N; ++i) {
-		out[i] = in[i];
-	}
-}
-

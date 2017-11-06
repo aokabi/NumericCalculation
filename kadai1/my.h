@@ -9,3 +9,6 @@ void printMlt(int size, double (*mat)[size]);
 
 void printVec(int size, double *vec);
 
+void cp(int size, double *in, double *out);
+
+void InitVec(int size, double *out);

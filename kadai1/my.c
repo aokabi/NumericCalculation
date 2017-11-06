@@ -39,3 +39,15 @@ void printVec(int size, double *vec) {
 	}
 }
 
+void cp(int size, double *in, double *out) {
+	for (int i = 0; i < size; ++i) {
+		out[i] = in[i];
+	}
+}
+
+void InitVec(int size, double *out) {
+	for (int i = 0; i < size; ++i) {
+		out[i] = 0;
+	}
+}
+
