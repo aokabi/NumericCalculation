@@ -5,8 +5,9 @@
 #define C 0.5
 #define S 0.03 
 #define TIME 60
+#define N 7
 
-void Matrix(double[N][N]);
+void matrix(double[N][N]);
 void InitVec(double[N]);
 void cp(double[N], double[N]);
 
@@ -24,11 +25,11 @@ void main(int argc, char *argv[]) {
 			if (h != N-1) printf(",");
 		}
 		printf("\n");
-		mat_vec(a, b, out);
+		mat_vec(N, a, b, out);
 		for (int i = 0; i < TIME; ++i) {
 			cp(out, temp);
 			InitVec(out);
-			mat_vec(a, temp, out);
+			mat_vec(N, a, temp, out);
 			printf("%d,", i+1);
 			for (int j = 0; j < N; ++j) {
 				printf("%g", out[j]);
@@ -36,21 +37,6 @@ void main(int argc, char *argv[]) {
 			}
 			printf("\n");
 		}
-	
-	
-		double s = 0.1;
-		double c = 0.4;
-
-		mat_vec(a, b, out);
-		for (int j = 0; j < 3; ++j) {
-			for (int i = 0; i < TIME; ++i) {
-				cp(out, temp);
-				InitVec(out);
-				mat_vec(a, temp, out);
-			}
-			c += 0.1;
-		}
-	
 }
 
 void matrix(double out[N][N]) {

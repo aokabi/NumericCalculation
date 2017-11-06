@@ -4,8 +4,9 @@
 
 #define S 0.1 
 #define TIME 60
+#define N 7
 
-void Matrix(double[N][N]);
+void matrix(double[N][N], double);
 void InitVec(double[N]);
 void cp(double[N], double[N]);
 
@@ -19,11 +20,12 @@ void main() {
 		double a[N][N] = {0};
 		InitVec(out);
 		matrix(a, c);
-		mat_vec(a, b, out);
+		mat_vec(N, a, b, out);
+		//printf("c=%g\n", c);
 		for (int i = 0; i < TIME; ++i) {
 			cp(out, temp);
 			InitVec(out);
-			mat_vec(a, temp, out);
+			mat_vec(N, a, temp, out);
 		}
 		for (int h = 0; h < N; ++h) {
 			printf("%d,%g\n", h, out[h]);
