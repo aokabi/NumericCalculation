@@ -51,3 +51,22 @@ void InitVec(int size, double *out) {
 	}
 }
 
+void matrix(int size, double (*out)[size], double s, double c) {
+	for (int i = 0; i < size; ++i) {
+		for (int j = 0; j < size; ++j) {
+			if ((j == 0 && i == 0) || (j == size-1 && i == size-1)) {
+				out[i][j] += (1-s)*(1-c);
+			}
+			if (i == j) {
+				out[i][j] += s;
+			}
+			else if (j == i+1) {
+				out[i][j] += (1-s)*(1-c);
+			}
+			else if (i == j+1) {
+				out[i][j] += (1-s)*c;
+			}
+		}
+	}
+}
+

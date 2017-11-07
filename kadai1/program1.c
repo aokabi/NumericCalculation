@@ -14,12 +14,16 @@ int main(){
 	double b2[N] = {6,2,5};
 	double b3[N] = {9,7,3};
 	double a[N][N] = {{1,6,9},{4,2,7},{8,5,3}};
+	double unitMat[N][N] = {{1,0,0}{0,1,0}{0,0,1}};
+	double zeroMat[N][N] = {{0,0,0}{0,0,0}{0,0,0}};
+	double oneMat[N][N] = {{1,1,1}{1,1,1}{1,1,1}};
 
 
 	//get_A(a);
 	/* 演算実行・画面出力・ファイル出力など */	
 	
 	//Ab1
+	
 	mat_vec(N, a, b1, f);
 	printVec(N, f);
 	printf("\n");
