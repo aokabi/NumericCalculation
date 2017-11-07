@@ -2,8 +2,7 @@
 #include <math.h>
 #include <stdlib.h>
 #include <my.h>
-
-#define C 0.5 
+ 
 #define TIME 60
 #define N 7
 
