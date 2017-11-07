@@ -18,12 +18,14 @@ void main(int argc, char *argv[]) {
 
 	matrix(N, a, s, c);
 
-		printf("0,");
+		printf("0,"); //for csv
 		for (int h = 0; h < N; ++h) {
 			printf("%g", b[h]);
 			if (h != N-1) printf(",");
 		}
+
 		printf("\n");
+		
 		mat_vec(N, a, b, out);
 		for (int i = 0; i < TIME; ++i) {
 			cp(N, out, temp);
