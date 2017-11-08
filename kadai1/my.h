@@ -13,4 +13,6 @@ void cp(int size, double *in, double *out);
 
 void InitVec(int size, double *out);
 
+void InitMat(int size, double (*out)[size]);
+
 void matrix(int size, double (*out)[size], double s, double c);
