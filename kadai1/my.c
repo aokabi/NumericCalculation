@@ -3,7 +3,6 @@
 
 void mat_vec(int size, double (*in1)[size], double *in2, double *out) {
 	/* 行列ベクトル積を実行 */
-	InitVec(size, out);
 	for (int i = 0; i < size; ++i){
 		for (int j = 0; j < size; ++j) {
 			out[i] += in1[i][j] * in2[j];
@@ -12,7 +11,6 @@ void mat_vec(int size, double (*in1)[size], double *in2, double *out) {
 }
 void mat_mlt(int size, double (*in1)[size], double (*in2)[size], double (*out)[size]) {
 	/* 行列行列積を実行 */
-	InitMat(size, out);
 	for (int i = 0; i < size; ++i){
 		for (int j = 0; j < size; ++j){
 			for (int h = 0; h < size; ++h) {

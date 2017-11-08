@@ -28,6 +28,7 @@ int main(){
 	printMlt(N, out);
 	printf("\n");	
 	printf("単位行列×全ての要素が1の行列\n");
+	InitMat(N, out);
 	mat_mlt(N, unitMat, oneMat, out);
 	printMlt(N, out);
 	printf("\n");
@@ -40,32 +41,39 @@ int main(){
 
 	//Ab2
 	printf("Ab2\n");
+	InitVec(N, f);
 	mat_vec(N, a, b2, f);
 	printVec(N, f);
 	printf("\n");
 
 	//Ab3
 	printf("Ab3\n");
+	InitVec(N, f);
 	mat_vec(N, a, b3, f);
 	printVec(N, f);
 	printf("\n");
 
 	//A^2
 	printf("A^2\n");
+	InitMat(N, out);
 	mat_mlt(N, a, a, out);
 	printMlt(N, out);
 	printf("\n");
 
 	//A(Ab1)
 	printf("A(Ab1)\n");
+	InitVec(N, f);
 	mat_vec(N, a, b1, f);
+	InitVec(N, vecout);
 	mat_vec(N, a, f, vecout);
 	printVec(N, vecout);
 	printf("\n");
 
 	//AAb1
 	printf("AAb1\n");
+	InitMat(N, out);
 	mat_mlt(N, a, a, out);
+	InitVec(N, vecout);
 	mat_vec(N, out, b1, vecout);
 	printVec(N, vecout);	
 	return 0;
