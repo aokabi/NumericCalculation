@@ -5,7 +5,7 @@
 void Newton(double (*func)(double), double x){
 
 	x -= (func(x) / deriv(func, x));
-	printf("%g\n", x);
+	printf("%.15f\n", x);
 	getchar();
 
 	double y = func(x);
