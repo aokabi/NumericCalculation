@@ -1,0 +1,1 @@
+c:\Users\aokabi\NumericCalculation\kadai2\program2\target\rls\debug\libprogram2.rmeta: C:\Users\aokabi\NumericCalculation\kadai2\mylib\src\lib.rs C:\Users\aokabi\NumericCalculation\kadai2\program2\src\main.rs
