@@ -1,3 +1,4 @@
+mod lib;
 
 const N: usize = 3;
 
