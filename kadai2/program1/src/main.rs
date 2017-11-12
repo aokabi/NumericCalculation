@@ -1,4 +1,4 @@
-mod lib;
+extern crate mylib;
 
 const N: usize = 3;
 
@@ -8,7 +8,7 @@ fn main() {
     let mut array_y: [f64; N] = [0.; N];
 
     for i in 0..N {
-        array_y[i] = lib::forward_substitute(i, &matrix_a[i], &array_b[i], &array_y);
+        array_y[i] = mylib::forward_substitute(i, &matrix_a[i], &array_b[i], &array_y);
     }
 
     for y in &array_y {

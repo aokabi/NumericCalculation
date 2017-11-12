@@ -3,7 +3,7 @@ name = "mylib"
 version = "0.1.0"
 
 [[package]]
-name = "program1"
+name = "program2"
 version = "0.1.0"
 dependencies = [
  "mylib 0.1.0",
